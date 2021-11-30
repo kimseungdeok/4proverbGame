@@ -22,9 +22,17 @@ proverbQuizList=[
         ['은혜를','원수로 갚는다'],
         ['우물안','개구리']
          ]
+
+proverbQuizListEdu=[
+        ['낫 놓고','기역자도 모른다','바로 눈앞에 정답이 있는데도 알아보지 못하는 무지함을 뜻해요'],
+        ['도둑이','제발 저린다','도둑이 괜한 근심으로 걱정하거나 실수한다는 말'],
+        ['등잔 밑이','어둡다','어떤 사건이나 문제가 있을 때 가장 가까운 사람이 범인이거나 원인이 있음을 뜻한다.']
+         ]
+
 print(proverbQuizList[0])
 print(proverbQuizList[0][0])
 print(proverbQuizList[0][1])
+print(proverbQuizListEdu[0][2]) 
 
 
 def getUtteranceParameter () :
@@ -40,10 +48,22 @@ def index():
 def proverbAction():
 
     response = commonResponse
-    randomNumber = random.randint(0,2)
+    randomNumber = random.randint(0,6)
     print(randomNumber)
     response['output']['proverbQuiz']=proverbQuizList[randomNumber][0]
     response['output']['proverbAnswer']=proverbQuizList[randomNumber][1]
+    print(response)
+    return json.dumps(response)
+
+@app.route('/eduProverbAction', methods=['POST'])
+def proverbAction():
+
+    response = commonResponse
+    randomNumber = random.randint(0,2)
+    print(randomNumber)
+    response['output']['proverbQuizEdu']=proverbQuizList[randomNumber][0]
+    response['output']['proverbAnswerEdu']=proverbQuizList[randomNumber][1]
+    response['output']['proverbMeaning']=proverbQuizList[randomNumber][2]
     print(response)
     return json.dumps(response)
 
