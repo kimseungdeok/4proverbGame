@@ -25,8 +25,8 @@ proverbQuizList=[
 
 proverbQuizListEdu=[
         ['낫 놓고','기역자도 모른다','바로 눈앞에 정답이 있는데도 알아보지 못하는 무지함을 뜻해요'],
-        ['도둑이','제발 저린다','도둑이 괜한 근심으로 걱정하거나 실수한다는 말'],
-        ['등잔 밑이','어둡다','어떤 사건이나 문제가 있을 때 가장 가까운 사람이 범인이거나 원인이 있음을 뜻한다.']
+        ['도둑이','제발 저린다','도둑이 괜한 근심으로 걱정하거나 실수한다는 말이에요'],
+        ['등잔 밑이','어둡다','어떤 사건이나 문제가 있을 때 가장 가까운 사람이 범인이거나 원인이 있음을 뜻해요']
          ]
 
 print(proverbQuizList[0])
@@ -55,11 +55,13 @@ def gameProverbAction():
     print(response)
     return json.dumps(response)
 
+
+randomNumber = random.randint(0,2)
+
 @app.route('/eduProverbAction', methods=['POST'])
 def eduProverbAction():
 
     response = commonResponse
-    randomNumber = random.randint(0,2)
     print(randomNumber)
     response['output']['proverbQuizEdu']=proverbQuizListEdu[randomNumber][0]
     response['output']['proverbAnswerEdu']=proverbQuizListEdu[randomNumber][1]
