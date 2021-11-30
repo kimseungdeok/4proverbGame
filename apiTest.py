@@ -64,7 +64,7 @@ def gameProverbAction():
 def eduProverbAction():
 
     response = commonResponse
-    randomNumber = random.randint(0,2)
+    randomNumber = random.randint(0,6)
     print(randomNumber)
     response['output']['proverbQuizEdu']=proverbQuizListEdu[randomNumber][0]
     response['output']['proverbAnswerEdu']=proverbQuizListEdu[randomNumber][1]
