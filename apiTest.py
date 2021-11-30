@@ -45,7 +45,7 @@ def index():
     return 'Hello Flask'
 
 @app.route('/gameProverbAction', methods=['POST'])
-def proverbAction():
+def gameProverbAction():
 
     response = commonResponse
     randomNumber = random.randint(0,6)
@@ -56,7 +56,7 @@ def proverbAction():
     return json.dumps(response)
 
 @app.route('/eduProverbAction', methods=['POST'])
-def proverbAction():
+def eduProverbAction():
 
     response = commonResponse
     randomNumber = random.randint(0,2)
