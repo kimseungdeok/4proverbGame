@@ -24,6 +24,15 @@ for data in proverbQuizListEdu:
     print("{}번문제의 힌트2 : {}".format(num + 1, proverbQuizListEdu[num][2])) # 뜻
     num = num + 1
 
+df = pd.read_csv("fourword.csv", encoding='utf-8')
+num = 0
+fourwordQuizListEdu = df.values.tolist()
+for data in fourwordQuizListEdu:
+    print("{}번 문제 : {}".format(num  + 1, fourwordQuizListEdu[num][0])) # 앞부분 (알버트가 말하는 부분)
+    print("{}번문제의 힌트1 : {}".format(num + 1, fourwordQuizListEdu[num][1])) # 뒷부분 (사용자가 말해야할 부분)
+    print("{}번문제의 힌트2 : {}".format(num + 1, fourwordQuizListEdu[num][2])) # 뜻
+    num = num + 1
+
 
 
 
@@ -60,21 +69,21 @@ fourwordQuizList=[
 #         ['우물안','개구리','넓은 시야를 보지 못하고 자신이 최고인줄 착각하는 사람들을 지칭하는 말이에요']
 #          ]
 
-fourwordQuizListEdu=[
-        ['수어','지교','물을 만난 물고기처럼 지냄을 뜻하며 떨어질 수 없는 특별한 친분을 의미'],
-        ['일취','월장','날마다 달마다 성장하고 발전한다는 뜻으로 학업이 날이 가고 달이 갈수록 진보함'],
-        ['가가','호호','집집마다라는 뜻이에요'],
-        ['갑남','을녀','보통사람들'],
-        ['경국','지색','나라의 운명을 위태롭게 할 만한 절세의 미인'],
-        ['고량','진미','맛있는 음식'],
-        ['과유','불급','정도를 지나치면 미치지 못한 것과 같음'],
-        ['관포','지교','우정이 깊은 사귐']
-         ]
+# fourwordQuizListEdu=[
+#         ['수어','지교','물을 만난 물고기처럼 지냄을 뜻하며 떨어질 수 없는 특별한 친분을 의미'],
+#         ['일취','월장','날마다 달마다 성장하고 발전한다는 뜻으로 학업이 날이 가고 달이 갈수록 진보함'],
+#         ['가가','호호','집집마다라는 뜻이에요'],
+#         ['갑남','을녀','보통사람들'],
+#         ['경국','지색','나라의 운명을 위태롭게 할 만한 절세의 미인'],
+#         ['고량','진미','맛있는 음식'],
+#         ['과유','불급','정도를 지나치면 미치지 못한 것과 같음'],
+#         ['관포','지교','우정이 깊은 사귐']
+#          ]
 
-print(proverbQuizList[0])
-print(proverbQuizList[0][0])
-print(proverbQuizList[0][1])
-print(proverbQuizListEdu[0][2]) 
+# print(proverbQuizList[0])
+# print(proverbQuizList[0][0])
+# print(proverbQuizList[0][1])
+# print(proverbQuizListEdu[0][2]) 
 
 
 
@@ -93,8 +102,8 @@ def gameProverbAction():
     response = commonResponse
     randomNumber = random.randint(0,6)
     print(randomNumber)
-    response['output']['proverbQuiz']=proverbQuizList[randomNumber][0]
-    response['output']['proverbAnswer']=proverbQuizList[randomNumber][1]
+    response['output']['proverbQuiz']=proverbQuizListEdu[randomNumber][0]
+    response['output']['proverbAnswer']=proverbQuizListEdu[randomNumber][1]
     print(response)
     return json.dumps(response)
 
@@ -104,8 +113,8 @@ def gameFourwordAction():
     response = commonResponse
     randomNumber = random.randint(0,6)
     print(randomNumber)
-    response['output']['fourwordQuiz']=fourwordQuizList[randomNumber][0]
-    response['output']['fourwordAnswer']=fourwordQuizList[randomNumber][1]
+    response['output']['fourwordQuiz']=fourwordQuizListEdu[randomNumber][0]
+    response['output']['fourwordAnswer']=fourwordQuizListEdu[randomNumber][1]
     print(response)
     return json.dumps(response)
 
