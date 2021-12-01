@@ -3,6 +3,8 @@ from flask import Flask, request, json
 from datetime import datetime
 import os
 import random
+import pandas as pd
+import numpy as np
 
 app = Flask(__name__)
 
@@ -12,6 +14,19 @@ commonResponse = {
     'output': {}
 
 }
+
+df = pd.read_csv("proverb.csv", encoding='utf-8')
+num = 0
+list_from_df = df.values.tolist()
+for data in list_from_df:
+    print("{}번 문제 : {}".format(num  + 1, list_from_df[num][0]))
+    print("{}번문제의 힌트1 : {}".format(num + 1, list_from_df[num][1]))
+    print("{}번문제의 힌트2 : {}".format(num + 1, list_from_df[num][2]))
+    num = num + 1
+
+print(list_from_df[0][0])
+
+
 proverbQuizList=[
         ['낫 놓고','기역자도 모른다'],
         ['도둑이','제발 저린다'],
@@ -60,6 +75,7 @@ print(proverbQuizList[0])
 print(proverbQuizList[0][0])
 print(proverbQuizList[0][1])
 print(proverbQuizListEdu[0][2]) 
+
 
 
 def getUtteranceParameter () :
