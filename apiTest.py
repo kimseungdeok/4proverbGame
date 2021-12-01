@@ -69,6 +69,8 @@ def eduProverbAction():
     response['output']['proverbQuizEdu']=proverbQuizListEdu[randomNumber][0]
     response['output']['proverbAnswerEdu']=proverbQuizListEdu[randomNumber][1]
     response['output']['proverbMeaning']=proverbQuizListEdu[randomNumber][2]
+    randomNumber = random.randint(0,6)
+    
     print(response)
     return json.dumps(response)
 
