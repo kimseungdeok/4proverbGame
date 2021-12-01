@@ -64,13 +64,22 @@ def gameProverbAction():
 def eduProverbAction():
 
     response = commonResponse
-    randomNumber = random.randint(0,6)
-    print(randomNumber)
-    response['output']['proverbQuizEdu']=proverbQuizListEdu[randomNumber][0]
-    response['output']['proverbAnswerEdu']=proverbQuizListEdu[randomNumber][1]
-    response['output']['proverbMeaning']=proverbQuizListEdu[randomNumber][2]
-    randomNumber = random.randint(0,6)
+    randomNumber1 = random.randint(0,6)
+    randomNumber2 = random.randint(0,6)
+    randomNumber3 = random.randint(0,6)
+    # print(randomNumber1)
+    response['output']['proverbQuizEdu1']=proverbQuizListEdu[randomNumber1][0]
+    response['output']['proverbAnswerEdu1']=proverbQuizListEdu[randomNumber1][1]
+    response['output']['proverbMeaning1']=proverbQuizListEdu[randomNumber1][2]
+
+    response['output']['proverbQuizEdu2']=proverbQuizListEdu[randomNumber2][0]
+    response['output']['proverbAnswerEdu2']=proverbQuizListEdu[randomNumber2][1]
+    response['output']['proverbMeaning2']=proverbQuizListEdu[randomNumber2][2]
     
+    response['output']['proverbQuizEdu3']=proverbQuizListEdu[randomNumber3][0]
+    response['output']['proverbAnswerEdu3']=proverbQuizListEdu[randomNumber3][1]
+    response['output']['proverbMeaning3']=proverbQuizListEdu[randomNumber3][2]
+
     print(response)
     return json.dumps(response)
 
