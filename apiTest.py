@@ -36,27 +36,27 @@ for data in fourwordQuizListEdu:
 
 
 
-proverbQuizList=[
-        ['낫 놓고','기역자도 모른다'],
-        ['도둑이','제발 저린다'],
-        ['등잔 밑이','어둡다'],
-        ['마른 하늘에','날벼락'],
-        ['사공이 많으면', '배가 산으로 간다'],
-        ['원수는','외나무 다리에서 만난다'],
-        ['은혜를','원수로 갚는다'],
-        ['우물안','개구리']
-         ]
+# proverbQuizList=[
+#         ['낫 놓고','기역자도 모른다'],
+#         ['도둑이','제발 저린다'],
+#         ['등잔 밑이','어둡다'],
+#         ['마른 하늘에','날벼락'],
+#         ['사공이 많으면', '배가 산으로 간다'],
+#         ['원수는','외나무 다리에서 만난다'],
+#         ['은혜를','원수로 갚는다'],
+#         ['우물안','개구리']
+#          ]
 
-fourwordQuizList=[
-        ['수어','지교'],
-        ['일취','월장'],
-        ['가가','호호'],
-        ['갑남','을녀'],
-        ['경국','지색'],
-        ['고량','진미'],
-        ['과유','불급'],
-        ['관포','지교']
-         ]
+# fourwordQuizList=[
+#         ['수어','지교'],
+#         ['일취','월장'],
+#         ['가가','호호'],
+#         ['갑남','을녀'],
+#         ['경국','지색'],
+#         ['고량','진미'],
+#         ['과유','불급'],
+#         ['관포','지교']
+#          ]
 
 # proverbQuizListEdu=[
 #         ['낫 놓고','기역자도 모른다','바로 눈앞에 정답이 있는데도 알아보지 못하는 무지함을 뜻해요'],
@@ -100,7 +100,7 @@ def index():
 def gameProverbAction():
 
     response = commonResponse
-    randomNumber = random.randint(0,6)
+    randomNumber = random.randint(0,100)
     print(randomNumber)
     response['output']['proverbQuiz']=proverbQuizListEdu[randomNumber][0]
     response['output']['proverbAnswer']=proverbQuizListEdu[randomNumber][1]
@@ -111,7 +111,7 @@ def gameProverbAction():
 def gameFourwordAction():
 
     response = commonResponse
-    randomNumber = random.randint(0,6)
+    randomNumber = random.randint(0,100)
     print(randomNumber)
     response['output']['fourwordQuiz']=fourwordQuizListEdu[randomNumber][0]
     response['output']['fourwordAnswer']=fourwordQuizListEdu[randomNumber][1]
@@ -122,9 +122,9 @@ def gameFourwordAction():
 def eduProverbAction():
 
     response = commonResponse
-    randomNumber1 = random.randint(0,8)
-    randomNumber2 = random.randint(0,8)
-    randomNumber3 = random.randint(0,8)
+    randomNumber1 = random.randint(0,100)
+    randomNumber2 = random.randint(0,100)
+    randomNumber3 = random.randint(0,100)
     # print(randomNumber1)
     response['output']['proverbQuizEdu1']=proverbQuizListEdu[randomNumber1][0]
     response['output']['proverbAnswerEdu1']=proverbQuizListEdu[randomNumber1][1]
@@ -146,9 +146,9 @@ def eduProverbAction():
 def eduFourwordAction():
 
     response = commonResponse
-    randomNumber1 = random.randint(0,8)
-    randomNumber2 = random.randint(0,8)
-    randomNumber3 = random.randint(0,8)
+    randomNumber1 = random.randint(0,100)
+    randomNumber2 = random.randint(0,100)
+    randomNumber3 = random.randint(0,100)
     # print(randomNumber1)
     response['output']['fourwordQuizEdu1']=fourwordQuizListEdu[randomNumber1][0]
     response['output']['fourwordAnswerEdu1']=fourwordQuizListEdu[randomNumber1][1]
