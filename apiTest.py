@@ -25,6 +25,8 @@ for data in list_from_df:
     num = num + 1
 
 print(list_from_df[0][0])
+print(list_from_df[0][1])
+print(list_from_df[1][0])
 
 
 proverbQuizList=[
