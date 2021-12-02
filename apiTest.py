@@ -15,7 +15,7 @@ commonResponse = {
 
 }
 
-df = pd.read_csv("proverb1.csv", encoding='utf-8')
+df = pd.read_csv("proverb.csv", encoding='utf-8')
 num = 0
 proverbQuizListEdu = df.values.tolist()
 for data in proverbQuizListEdu:
@@ -24,7 +24,7 @@ for data in proverbQuizListEdu:
     print("{}번문제의 힌트2 : {}".format(num + 1, proverbQuizListEdu[num][2])) # 뜻
     num = num + 1
 
-df = pd.read_csv("fourword1.csv", encoding='utf-8')
+df = pd.read_csv("fourword.csv", encoding='utf-8')
 num = 0
 fourwordQuizListEdu = df.values.tolist()
 for data in fourwordQuizListEdu:
