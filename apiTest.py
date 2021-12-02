@@ -107,6 +107,18 @@ def gameProverbAction():
     print(response)
     return json.dumps(response)
 
+
+@app.route('/nextProverbAction', methods=['POST'])
+def nextProverbAction():
+
+    response = commonResponse
+    randomNumber = random.randint(0,100)
+    print(randomNumber)
+    response['output']['nProverbQuiz']=proverbQuizListEdu[randomNumber][0]
+    response['output']['nProverbAnswer']=proverbQuizListEdu[randomNumber][1]
+    print(response)
+    return json.dumps(response)
+
 @app.route('/gameFourwordAction', methods=['POST'])
 def gameFourwordAction():
 
@@ -115,6 +127,17 @@ def gameFourwordAction():
     print(randomNumber)
     response['output']['fourwordQuiz']=fourwordQuizListEdu[randomNumber][0]
     response['output']['fourwordAnswer']=fourwordQuizListEdu[randomNumber][1]
+    print(response)
+    return json.dumps(response)
+
+@app.route('/nextFourwordAction', methods=['POST'])
+def nextFourwordAction():
+
+    response = commonResponse
+    randomNumber = random.randint(0,100)
+    print(randomNumber)
+    response['output']['nFourwordQuiz']=fourwordQuizListEdu[randomNumber][0]
+    response['output']['nFourwordAnswer']=fourwordQuizListEdu[randomNumber][1]
     print(response)
     return json.dumps(response)
 
